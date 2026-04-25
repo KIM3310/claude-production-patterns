@@ -102,7 +102,7 @@ def retry_decision(
         return RetryDecision(
             True,
             min(32.0, 2.0**attempt),
-            f"transient error; exponential backoff",
+            "transient error; exponential backoff",
         )
 
     if error_class == ErrorClass.TIMEOUT:

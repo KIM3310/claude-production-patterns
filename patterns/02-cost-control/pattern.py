@@ -14,7 +14,7 @@ import json
 import logging
 import threading
 from collections import defaultdict, deque
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 log = logging.getLogger("claude_production.cost_control")
 
