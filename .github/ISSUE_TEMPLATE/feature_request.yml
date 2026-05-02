@@ -1,0 +1,36 @@
+name: Feature request
+description: Suggest a focused improvement
+title: "feat: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Use this template for product, developer-experience, documentation, or operational improvements.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: What need does this solve, and who benefits?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the smallest useful version of the change.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Mention workarounds, rejected approaches, or tradeoffs.
+    validations:
+      required: false
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation plan
+      description: How should this be tested, measured, or reviewed?
+    validations:
+      required: false
