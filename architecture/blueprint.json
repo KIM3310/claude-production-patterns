@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "repository": "claude-production-patterns",
+  "status": "archived-supporting",
+  "neutrality": {
+    "positioning": "technical operating model",
+    "scope_note": "Describes current proof surfaces and extension seams; does not claim external production traffic or certification unless separately evidenced.",
+    "tone_guard": "Keep the artifact technical, neutral, and non-promotional."
+  },
+  "focus": {
+    "domain": "agent runtime reliability and AI workflow orchestration",
+    "summary": "Repository-local proof surface for agent runtime reliability and AI workflow orchestration, backed by Python service or lab runtime, GitHub Actions validation.",
+    "primary_stack": [
+      "Python service or lab runtime",
+      "GitHub Actions validation"
+    ],
+    "architecture_axes": [
+      "cloud architecture",
+      "AI engineering",
+      "reliability",
+      "security",
+      "operator experience"
+    ]
+  },
+  "cloud_architecture": {
+    "operating_model": "stateless runtimes, provider adapters, queue-aware execution, telemetry, and controlled secret boundaries",
+    "patterns": [
+      "Stateless agent gateway with provider abstraction, retries, cost controls, and trace capture"
+    ],
+    "landing_zone_controls": [
+      "identity boundary and least-privilege service access",
+      "environment separation for local, staging, and managed runtime paths",
+      "secret storage outside source and deterministic fallback for missing credentials",
+      "observability hooks for logs, metrics, traces, and audit events",
+      "rollback path for deployment, schema, and model changes"
+    ],
+    "resilience_controls": [
+      "bounded retries with explicit failure states",
+      "health/readiness checks before operator-facing flows are trusted",
+      "idempotent data or artifact writes where repeat execution is possible",
+      "cost and quota guardrails for hosted services and model adapters"
+    ]
+  },
+  "ai_engineering": {
+    "operating_model": "tool calling, retrieval, eval gates, prompt/version control, cost accounting, and deterministic fallback paths",
+    "patterns": [
+      "Treat tool calls as typed contracts with retries, timeouts, validation, and trace identifiers",
+      "Evaluate agent behavior with replay fixtures, golden traces, and cost/latency accounting",
+      "Separate deterministic checks from model-generated output so the system remains testable without external credentials",
+      "Capture prompts, inputs, outputs, and decision metadata as inspectable artifacts instead of hidden side effects",
+      "Gate model-assisted actions with policy, confidence, and fallback states before they reach an operator path"
+    ],
+    "evaluation_controls": [
+      "deterministic fixtures for CI-safe verification",
+      "golden output or schema checks for generated artifacts",
+      "trace capture for prompts, tool calls, inputs, and outputs",
+      "quality gates that fail closed when evidence is missing"
+    ],
+    "model_risk_controls": [
+      "prompt drift",
+      "tool-call ambiguity",
+      "provider outage",
+      "unbounded latency or spend"
+    ]
+  },
+  "validation": {
+    "local_command": "python3 scripts/validate_architecture_blueprint.py",
+    "ci_workflow": ".github/workflows/architecture-blueprint.yml",
+    "required_files": [
+      "architecture/blueprint.json",
+      "docs/cloud-ai-architecture.md",
+      "scripts/validate_architecture_blueprint.py"
+    ]
+  },
+  "research_grounding": [
+    {
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "url": "https://arxiv.org/abs/2005.11401"
+    },
+    {
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "url": "https://arxiv.org/abs/2210.03629"
+    },
+    {
+      "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "url": "https://arxiv.org/abs/2310.11511"
+    }
+  ]
+}
