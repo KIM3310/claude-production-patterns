@@ -78,6 +78,13 @@ MIT.
 
 - [Monetization and GTM playbook](docs/monetization-playbook.md) frames this archived proof as a current buyer conversation, including offer ladder, channels, proof gates, and risk boundaries.
 
+## Review Notes
+
+- [Review guide](docs/reviewer-evidence-map.md) summarizes the archived role, proof surface, checks, and boundaries.
+- [Quality notes](docs/quality-gate.md) lists local checks, CI surface, and presentation expectations for this archived repository.
+- [Revenue growth model](docs/revenue-growth-model.md) maps the archived proof to an ethical diagnostic, workshop, pilot, or enablement path.
+- [Enterprise readiness notes](docs/enterprise-readiness.md) outlines what must be refreshed before any serious buyer or production use.
+
 ## Cloud + AI Architecture
 
 This repository includes a neutral cloud and AI engineering blueprint that maps the current proof surface to runtime boundaries, data contracts, model-risk controls, deployment posture, and validation hooks.
